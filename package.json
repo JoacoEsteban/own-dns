@@ -6,7 +6,7 @@
   "author": "Joaco Esteban <dev.joaco.esteban@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon"
+    "forever": "nodemon"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -14,3 +14,4 @@
     "nodemon": "^2.0.3"
   }
 }
+w
