@@ -1,0 +1,16 @@
+{
+  "name": "own-dns",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:JoacoEsteban/own-dns.git",
+  "author": "Joaco Esteban <dev.joaco.esteban@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3"
+  }
+}
