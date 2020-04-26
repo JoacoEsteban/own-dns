@@ -6,6 +6,7 @@
   "author": "Joaco Esteban <dev.joaco.esteban@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "prod": "node index.js prod",
     "forever": "nodemon"
   },
   "dependencies": {

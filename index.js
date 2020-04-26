@@ -1,6 +1,6 @@
 global.log = (...aa) => aa.forEach(a => console.log(require('util').inspect(a, {showHidden: false, depth: null})))
 
-process.env.ENV_PROD = process.argv.some(arg => arg === 'prod')
+if (process.argv.some(arg => arg === 'prod')) process.env.ENV_PROD = true
 
 const path = require('path')
 const PORTS = process.env.ENV_PROD ? [8080, 80] : [4598]
