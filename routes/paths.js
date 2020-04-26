@@ -1,4 +1,4 @@
-const h = global.url = url => url.indexOf('https://') === 0 ? url : 'https://' + url
+const h = global.url = url => url.search(/https?:\/\//) === 0 ? url : 'https://' + url
 
 const list = [{
     keys: ['spotify', 'spoti', '@root', 'www'],
@@ -8,6 +8,14 @@ const list = [{
   {
     keys: ['instagram', 'insta'],
     url: h('instagram.com/joa.qo'),
+  },
+  {
+    keys: ['mixcloud'],
+    url: h('www.mixcloud.com/joacoesteban/'),
+  },
+  {
+    keys: ['soundcloud'],
+    url: h('soundcloud.com/perzac'),
   },
   {
     keys: ['github', 'git'],
