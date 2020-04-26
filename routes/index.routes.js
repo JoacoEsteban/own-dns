@@ -6,9 +6,8 @@ const reject = (res, status = 404) => {
 }
 
 const redirect = async (res, domains) => {
-  console.log(domains)
+  console.log('redirecting to => ', domains)
   const url = await PATHS.get(domains)
-  console.log(url)
   if (url) return res.redirect(url)
   reject(res)
 }
