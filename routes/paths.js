@@ -1,8 +1,9 @@
-const h = url => url.indexOf('https://') === 0 ? url : 'https://' + url
+const h = global.url = url => url.indexOf('https://') === 0 ? url : 'https://' + url
 
 const list = [{
-    keys: ['spotify', 'spoti', '@root'],
+    keys: ['spotify', 'spoti', '@root', 'www'],
     url: h('open.spotify.com/user/joaqo.esteban'),
+    subs: require('./spotify/playlists')
   },
   {
     keys: ['instagram', 'insta'],
@@ -23,8 +24,10 @@ const list = [{
 ]
 
 const controller = {
-  async get(slug) {
-    return (list.find(itm => itm.keys.some(key => key === slug)) || {}).url
+  async get(domains) {
+    const top = (list.find(itm => itm.keys.some(key => key === domains[0])) || {})
+    if (!domains[1]) return top.url
+    return (top.subs && top.subs.find(itm => itm.keys.some(key => key === domains[1])) || {}).url
   }
 }
 
