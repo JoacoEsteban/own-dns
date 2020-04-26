@@ -14,7 +14,7 @@ const redirect = async (res, slug) => {
 const handleReq = (req, res) => {
   const host = req.get('host')
   console.log('HOST:', host)
-  if (!host.includes('joacoesteban.com')) return reject(res)
+  if (!(host && host.includes('joacoesteban.com'))) return reject(res)
   return redirect(res, host.slice(0, host.indexOf('.')))
 }
 
