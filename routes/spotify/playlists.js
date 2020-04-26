@@ -31,7 +31,7 @@ module.exports = [
   url: h('43jibqNWoV3Sj4cGJsOhpx?si=yjI10OGCSoKcJc20EW49iA')
 },
 {
-  keys: ['bootsncats', 'boots&cats', 'bootscats'],
+  keys: ['bootsncats', 'bootsandcats', 'bootscats'],
   url: h('4GYGq1VmpPT2aweHl5yLS7?si=K1RK7-zwStml1ee3tTASyw')
 },
 {
