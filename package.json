@@ -6,8 +6,10 @@
   "author": "Joaco Esteban <dev.joaco.esteban@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "prod": "node index.js prod",
-    "forever": "nodemon"
+    "static": "node index.js",
+    "static:prod": "node index.js prod",
+    "forever": "nodemon index.js",
+    "forever:prod": "yarn run forever prod"
   },
   "dependencies": {
     "axios": "^0.19.2",
