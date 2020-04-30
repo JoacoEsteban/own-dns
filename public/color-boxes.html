@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="">
+  <style>
+    @keyframes anim {
+      0% {
+        transform: translateY(0);
+      }
+
+      75% {
+        transform: translateY(100px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .cont {
+      display: flex;
+    }
+
+    div:not(.cont) {
+      font-family: sans-serif;
+      height: 10vw;
+      width: 10vw;
+      border: 3px solid black;
+      margin: 5px;
+      animation: anim 1.5s ease infinite;
+    }
+
+    div:not(.cont):nth-child(n+2) {
+      animation-delay: .2s;
+    }
+
+    div:not(.cont):nth-child(n+3) {
+      animation-delay: .4s;
+    }
+
+    .red-box {
+      background-color: #f00;
+    }
+
+    .blue-box {
+      background-color: #00f;
+      color: white
+    }
+
+    .green-box {
+      background-color: #0f0
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cont">
+    <div class="red-box">
+      Epstein
+    </div>
+    <div class="blue-box">
+      Didn't
+    </div>
+    <div class="green-box">
+      Kill himself
+    </div>
+  </div>
+  <script src="" async defer></script>
+</body>
+
+</html>

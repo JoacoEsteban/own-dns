@@ -29,13 +29,20 @@ const list = [{
     keys: ['contact', 'mail', 'email'],
     url: 'mailto:me@joacoesteban.com'
   },
+  {
+    keys: ['boxes'],
+    cb: (res) => {
+      res.sendFile(process.cwd() + '/public/color-boxes.html')
+    }
+  },
 ]
 
 const controller = {
   async get(domains) {
     const top = (list.find(itm => itm.keys.some(key => key === domains[0])) || {})
-    if (!domains[1]) return top.url
-    return (top.subs && top.subs.find(itm => itm.keys.some(key => key === domains[1])) || {}).url
+    if (!domains[1]) return {url: top.url, cb: top.cb}
+    const sub = (top.subs && top.subs.find(itm => itm.keys.some(key => key === domains[1])) || {})
+    return {url: sub.url, cb: sub.cb}
   }
 }
 
