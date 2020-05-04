@@ -11,11 +11,11 @@ const list = [{
   },
   {
     keys: ['mixcloud'],
-    url: h('www.mixcloud.com/joacoesteban/'),
+    url: h('mixcloud.com/iknowus'),
   },
   {
     keys: ['soundcloud'],
-    url: h('soundcloud.com/perzac'),
+    url: h('soundcloud.com/iknowus'),
   },
   {
     keys: ['github', 'git'],
