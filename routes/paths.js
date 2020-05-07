@@ -26,6 +26,10 @@ const list = [{
     url: h('linkedin.com/in/joaquin-esteban-627ab6183/'),
   },
   {
+    keys: ['steam'],
+    url: h('steamcommunity.com/id/whimahwhe/'),
+  },
+  {
     keys: ['contact', 'mail', 'email'],
     url: 'mailto:me@joacoesteban.com'
   },
