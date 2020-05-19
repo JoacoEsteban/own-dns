@@ -22,7 +22,7 @@ const redirect = async (res, domains) => {
   reject(res)
 }
 
-const getHost = host => {
+const getHost = (host, path) => {
   console.log('HOSTS_____', host)
   if (!host) return null
   let base = BASES.find(base => host.includes(base.url))
@@ -31,9 +31,8 @@ const getHost = host => {
   host = host.replace(base.url, '').split('.').filter(d => d.length).map(d => d.toLowerCase())
   !host.length && (host = ['@root'])
   let pathComponent
-  if (host[host.length - 1].includes('/')) {
-    pathComponent = host.pop().split('/').filter(s => s)
-  }
+
+  pathComponent = path.split('/').filter(s => s)
   const subDomains = host.reverse()
   return {
     tld: base,
@@ -43,7 +42,7 @@ const getHost = host => {
 }
 
 const handleReq = (req, res) => {
-  const host = getHost(req.get('host'))
+  const host = getHost(req.get('host'), req.url)
   console.log(host)
   if (!host || !host.subDomains.length) return reject(res)
   redirect(res, host)
