@@ -24,19 +24,20 @@ const redirect = async (res, domains) => {
 
 const getHost = host => {
   if (!host) return null
-  let base = BASES.find(base => host.includes(base))
+  let base = BASES.find(base => host.includes(base.url))
   if (!base) return null
 
   host = host.replace(base.url, '').split('.').filter(d => d.length).map(d => d.toLowerCase())
   !host.length && (host = ['@root'])
   return {
-    tld,
+    tld: base,
     subDomains: host.reverse()
   }
 }
 
 const handleReq = (req, res) => {
   const host = getHost(req.get('host'))
+  console.log(host)
   if (!host || !host.subDomains.length) return reject(res)
   redirect(res, host)
 }

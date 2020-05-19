@@ -43,7 +43,7 @@ const list = {
   ],
   songbasket: [{
       keys: ['download'],
-      url: h('https://drive.google.com/uc?export=download&confirm=5w4z&id=1Uqpx6CfshOTYMa1_VFeSLcfY0yl-HwBB')
+      url: h('https://doc-00-2g-docs.googleusercontent.com/docs/securesc/de1so4a2bh94jr1qnndqtgpfha3efous/i58m60r2e6r63qrgk4hf7lbi14jnms9j/1589862750000/04924979768647543851/08279115034598829155Z/1Uqpx6CfshOTYMa1_VFeSLcfY0yl-HwBB?e=download&nonce=7q4q4ai30nllq&user=08279115034598829155Z&hash=t7o0teosd0fbrrvch1jfjf3r6jj6ll2i')
     }
   ]
 }
