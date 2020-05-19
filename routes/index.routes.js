@@ -30,6 +30,7 @@ const getHost = host => {
   host = host.replace(base.url, '').split('.').filter(d => d.length).map(d => d.toLowerCase())
   !host.length && (host = ['@root'])
   let pathComponent
+  console.log('HOSTS_____', host)
   if (host[host.length - 1].includes('/')) {
     pathComponent = host.pop().split('/').filter(s => s)
   }
