@@ -37,7 +37,7 @@ const getHost = (host, path) => {
   return {
     tld: base,
     subDomains,
-    pathComponent
+    pathComponent: pathComponent.length ? pathComponent : null
   }
 }
 

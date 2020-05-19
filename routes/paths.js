@@ -1,7 +1,7 @@
 const h = global.url = url => url.search(/https?:\/\//) === 0 ? url : 'https://' + url
 
 const list = {
-  'self': [{
+  self: [{
       keys: ['spotify', 'spoti', '@root', 'www'],
       url: h('open.spotify.com/user/joaqo.esteban'),
       subs: require('./spotify/playlists')
@@ -53,8 +53,7 @@ const controller = {
     const top = (list[tld.name].find(itm => itm.keys.some(key => key === subDomains[0])) || {})
     const sub = subDomains[1] ? (top.subs && top.subs.find(itm => itm.keys.some(key => key === subDomains[1])) || {}) : top
     if (pathComponent) {
-      if (!sub.paths) return {}
-      return sub.paths.find(itm => itm.keys.some(key => key === pathComponent[0])) || {}
+      return (sub.paths || []).find(itm => itm.keys.some(key => key === pathComponent[0])) || sub
     }
     return {url: sub.url, cb: sub.cb}
   }
