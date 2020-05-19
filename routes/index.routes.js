@@ -29,9 +29,15 @@ const getHost = host => {
 
   host = host.replace(base.url, '').split('.').filter(d => d.length).map(d => d.toLowerCase())
   !host.length && (host = ['@root'])
+  let pathComponent
+  if (host[host.length - 1].includes('/')) {
+    pathComponent = host.pop().split('/').filter(s => s)
+  }
+  const subDomains = host.reverse()
   return {
     tld: base,
-    subDomains: host.reverse()
+    subDomains,
+    pathComponent
   }
 }
 

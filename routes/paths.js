@@ -43,16 +43,19 @@ const list = {
   ],
   songbasket: [{
       keys: ['download'],
-      url: h('https://drive.google.com/open?id=1Uqpx6CfshOTYMa1_VFeSLcfY0yl-HwBB')
+      paths: require('./songbasket/downloads')
     }
   ]
 }
 
 const controller = {
-  async get({tld, subDomains}) {
+  async get({tld, subDomains, pathComponent}) {
     const top = (list[tld.name].find(itm => itm.keys.some(key => key === subDomains[0])) || {})
-    if (!subDomains[1]) return {url: top.url, cb: top.cb}
-    const sub = (top.subs && top.subs.find(itm => itm.keys.some(key => key === subDomains[1])) || {})
+    const sub = subDomains[1] ? (top.subs && top.subs.find(itm => itm.keys.some(key => key === subDomains[1])) || {}) : top
+    if (pathComponent) {
+      if (!sub.paths) return {}
+      return sub.paths.find(itm => itm.keys.some(key => key === pathComponent[0])) || {}
+    }
     return {url: sub.url, cb: sub.cb}
   }
 }
