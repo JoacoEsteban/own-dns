@@ -43,6 +43,7 @@ const list = {
   ],
   songbasket: [{
       keys: ['download'],
+      url: h('github.com/JoacoEsteban/SongBasket/releases'),
       paths: require('./songbasket/downloads')
     }
   ]

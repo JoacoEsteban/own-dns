@@ -1,12 +1,13 @@
 const PATHS = require('./paths')
+const tld = process.env.ENV_PROD ? '.com' : '.dev'
 const BASES = [
   {
     name: 'self',
-    url: 'joacoesteban.com'
+    url: 'joacoesteban' + tld
   },
   {
     name: 'songbasket',
-    url: 'songbasket.com'
+    url: 'songbasket' + tld
   },
 ]
 
@@ -29,9 +30,11 @@ const getHost = (host, path) => {
   if (!base) return null
 
   host = host.replace(base.url, '').split('.').filter(d => d.length).map(d => d.toLowerCase())
+  if (!process.env.ENV_PROD) {
+    host = host.filter(h => !h.includes(':')) // Cleans port if specified
+  }
   !host.length && (host = ['@root'])
   let pathComponent
-
   pathComponent = path.split('/').filter(s => s)
   const subDomains = host.reverse()
   return {
