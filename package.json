@@ -12,7 +12,7 @@
     "forever:prod": "yarn run forever prod"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "dotenv-flow": "^3.1.0",
     "express": "^4.17.1",
     "nodemon": "^2.0.3"
